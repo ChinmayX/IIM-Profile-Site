@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chinmay P Dev</title>
+  <script>
+    function updateISTTime() {
+      const nowUTC = new Date();
+      const istTime = new Date(nowUTC.getTime());
+  
+      let hours = istTime.getHours();
+      const minutes = istTime.getMinutes().toString().padStart(2, '0');
+      const seconds = istTime.getSeconds().toString().padStart(2, '0');
+  
+      const ampm = hours >= 12 ? 'PM' : 'AM';
+      hours = hours % 12;
+      hours = hours ? hours : 12; // 0 should be 12
+  
+      const formattedTime = `${hours.toString().padStart(2, '0')}:${minutes}:${seconds} ${ampm}`;
+      document.querySelector(".time").textContent = formattedTime;
+    }
+  
+    setInterval(updateISTTime, 1000);
+    updateISTTime();
+  </script>
+
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/iconoir-icons/iconoir@main/css/iconoir.css" />
+</head>
+<body>
+  <div class="container">
+    <!-- Header Section -->
+    <div class="header">
+      <div class="text-content">
+        <img src="pfp.jpg" alt="pfp" />
+        <h1>Chinmay P Dev</h1>
+        <p>Product Craftsman</p>
+        <div class="icons">
+          <i class="iconoir-instagram"></i>
+          <i class="iconoir-x"></i>
+          <i class="iconoir-linkedin
+          "></i>
+        </div>
+      </div>
+      <div class="image-overlay">
+        <p class="time">07:07 PM</p>
+        <p class="location">Banglore, IN</p>
+      </div>
+    </div>
+
+    <!-- What I Do Best Section -->
+    <section class="content" data-aos="fade-up" >
+      <h2>What I Do Best</h2>
+      <h3>Turning Ideas into Interactive Prototypes</h3>
+      <p>I quickly translate concepts into prototypes to test usability early and refine experiences.</p>
+  
+      <!-- App Screens -->
+      <div class="screens">
+        <img src="mockup-1.jpg" alt="Prototype 1">
+        <img src="mockup-2.png" alt="Prototype 2">
+        <img src="mockup-3.png" alt="Prototype 3">
+      </div>
+    </section>
+
+
+    <section class="content education" data-aos="fade-up" >
+      <h2>Education</h2>
+    
+      <div class="edu-entry">
+        <h3>KVIISc</h3>
+        <p class="year-range">2012 – 2024</p>
+        <ul>
+          <li>Captain, U14 & U16 Cricket Team</li>
+          <li>Lead, Robotics Team – Won "Best Robot Design Award"</li>
+          <li>President, ATL Innovation Lab</li>
+        </ul>
+      </div>
+    
+      <div class="edu-entry">
+        <h3>IIM Bangalore – BBA, Digital Business & Entrepreneurship</h3>
+        <p class="year-range">2024 – 2027</p>
+      </div>
+    </section>
+    
+  </div>
+</body>
+</html>
