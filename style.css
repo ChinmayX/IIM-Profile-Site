@@ -70,10 +70,13 @@ body {
   .text-content img {
     width: 8vw;
     height: 8vw;
-    border-radius: 6vw;
-
-  animation: pulse 3s ease-in-out infinite;
+    border-radius: 50%;     /* cleaner than 6vw */
+    object-fit: cover;      /* prevents distortion */
+    object-position: center;/* control framing */
+    
+    animation: pulse 3s ease-in-out infinite;
   }
+  
   
   .text-content h1 {
     margin: 0;
